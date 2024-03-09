@@ -1,0 +1,54 @@
+Dim REC_NUM = D_REF.Text
+            Dim sqlCon = New SqlConnection(connstring)
+            sqlCon.Open()
+            Using (sqlCon)
+                Dim sqlComm As New SqlCommand()
+                sqlComm.Connection = sqlCon
+                sqlComm.CommandText = "SHOW_ODR_FOR_DEL"
+                sqlComm.CommandType = CommandType.StoredProcedure
+                sqlComm.Parameters.AddWithValue("@ID", REC_NUM)
+                Using da As New SqlDataAdapter()
+                    da.SelectCommand = sqlComm
+                    Using sdr As SqlDataReader = sqlComm.ExecuteReader()
+                        If sdr.HasRows Then
+                            sdr.Read()
+                            D_PICKUPFORM.Text = sdr("PICK_UP_REF_NUM")
+                            CBX_D_SORT.Text = sdr("SORTER")
+                            D_TYPE_SERVE.Text = sdr("TYPE_OF_SERVICE")
+                            D_DATE.Text = sdr("DELIVERY_DATE")
+                            CBX_D_DEL_TEAM.Text = sdr("DELIVERY_TEAM")
+                            D_REMARKS.Text = sdr("Remarks")
+                            CBX_D_R_SORT.Text = sdr("SORTED_RECEIVED_BY")
+                            CBX_D_CHK.Text = sdr("CHECKED_BY")
+                            'D_TOTAL.Text = sdr("TOTAL_WEIGHT")
+                        Else
+                            MessageBox.Show("No Result found please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        End If
+                    End Using
+                    Using dt As New DataTable()
+                        da.Fill(dt)
+                        DataGridView1.DataSource = dt
+                        DataGridView1.Columns(0).ReadOnly = True
+                        DataGridView1.Columns(1).ReadOnly = True
+                        DataGridView1.Columns(2).ReadOnly = True
+                        DataGridView1.Columns(3).ReadOnly = False
+                        DataGridView1.Columns(4).ReadOnly = True
+                        For ttl As Integer = 5 To 15
+                            DataGridView1.Columns(ttl).Visible = False
+                        Next
+                        DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+                        DataGridView1.Columns(0).Width = 25
+                        DataGridView1.Columns(1).Width = 150
+                        DataGridView1.Columns(2).Width = 25
+                        DataGridView1.Columns(3).Width = 25
+                        DataGridView1.Columns(4).Width = 100
+                        'DataGridView1.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+                        DataGridView1.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+                        DataGridView1.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+                        DataGridView1.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+                        DataGridView1.ClearSelection()
+                    End Using
+
+                End Using
+            End Using
+            sqlCon.Close()

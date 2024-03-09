@@ -1,0 +1,527 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props" Condition="Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A7F46A23-856B-400B-8521-21D0AE389D2E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>SUDS_LAUNDRY.My.MyApplication</StartupObject>
+    <RootNamespace>SUDS_LAUNDRY</RootNamespace>
+    <AssemblyName>SUDS LAUNDRY</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>\\172.16.2.7\mis\AC-Files\SUDS LOCAL\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>\\172.16.2.7\mis\AC-Files\SUDS LOCAL\</UpdateUrl>
+    <ProductName>SUDS LAUNDRY GENSAN LOCAL</ProductName>
+    <PublisherName>SUDS LAUNDRY GENSAN LOCAL</PublisherName>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.4.1.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SUDS LAUNDRY.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SUDS LAUNDRY.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>suds1 %284%29.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>CF72763D23949001CB1FD2F7421808C1E8565B6F</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="FORMS\addcustomer.Designer.vb">
+      <DependentUpon>addcustomer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\addcustomer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\addDepartment.Designer.vb">
+      <DependentUpon>addDepartment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\addDepartment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\addemp.Designer.vb">
+      <DependentUpon>addemp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\addemp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\addItems.Designer.vb">
+      <DependentUpon>addItems.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\addItems.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\addservice.Designer.vb">
+      <DependentUpon>addservice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\addservice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\AUTHORIZATION.Designer.vb">
+      <DependentUpon>authorization.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\authorization.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Backup.vb" />
+    <Compile Include="FORMS\EMPList.Designer.vb">
+      <DependentUpon>EMPList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\EMPList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\image.Designer.vb">
+      <DependentUpon>image.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\image.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\DELIVERY.Designer.vb">
+      <DependentUpon>DELIVERY.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\DELIVERY.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\ITEMS.Designer.vb">
+      <DependentUpon>ITEMS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\ITEMS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Main.Designer.vb">
+      <DependentUpon>Main.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Main.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Pending.Designer.vb">
+      <DependentUpon>Pending.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Pending.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\PENDING_DELIVERY.Designer.vb">
+      <DependentUpon>PENDING_DELIVERY.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\PENDING_DELIVERY.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\PostPayment.Designer.vb">
+      <DependentUpon>PostPayment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\PostPayment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\PREV.Designer.vb">
+      <DependentUpon>PREV.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\PREV.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\PREV_DLVR.Designer.vb">
+      <DependentUpon>PREV_DLVR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\PREV_DLVR.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\printing.Designer.vb">
+      <DependentUpon>printing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\printing.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\printing_dlvr.Designer.vb">
+      <DependentUpon>printing_dlvr.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\printing_dlvr.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\PrintMasteList.Designer.vb">
+      <DependentUpon>PrintMasteList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\PrintMasteList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\report_dailyTransaction.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>report_dailyTransaction.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FORMS\report_delivery.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>report_delivery.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FORMS\report_itemsHistory.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>report_itemsHistory.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FORMS\report_MasterList.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>report_MasterList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FORMS\report_receive.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>report_receive.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FORMS\report_soa.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>report_soa.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FORMS\report_SOA1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>report_SOA1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FORMS\RPT_DAILYTRANS.Designer.vb">
+      <DependentUpon>RPT_DAILYTRANS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\RPT_DAILYTRANS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\RPT_ITMS.Designer.vb">
+      <DependentUpon>RPT_ITMS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\RPT_ITMS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\RPT_SOA.Designer.vb">
+      <DependentUpon>RPT_SOA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\RPT_SOA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\SEARCH.Designer.vb">
+      <DependentUpon>SEARCH.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\SEARCH.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\SERVICES.Designer.vb">
+      <DependentUpon>SERVICES.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\SERVICES.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Settings.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FORMS\addcustomer.resx">
+      <DependentUpon>addcustomer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\addDepartment.resx">
+      <DependentUpon>addDepartment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\addemp.resx">
+      <DependentUpon>addemp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\addItems.resx">
+      <DependentUpon>addItems.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\addservice.resx">
+      <DependentUpon>addservice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\authorization.resx">
+      <DependentUpon>authorization.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\EMPList.resx">
+      <DependentUpon>EMPList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\image.resx">
+      <DependentUpon>image.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\DELIVERY.resx">
+      <DependentUpon>DELIVERY.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\ITEMS.resx">
+      <DependentUpon>ITEMS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Main.resx">
+      <DependentUpon>Main.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Pending.resx">
+      <DependentUpon>Pending.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\PENDING_DELIVERY.resx">
+      <DependentUpon>PENDING_DELIVERY.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\PostPayment.resx">
+      <DependentUpon>PostPayment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\PREV.resx">
+      <DependentUpon>PREV.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\PREV_DLVR.resx">
+      <DependentUpon>PREV_DLVR.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\printing.resx">
+      <DependentUpon>printing.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\printing_dlvr.resx">
+      <DependentUpon>printing_dlvr.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\PrintMasteList.resx">
+      <DependentUpon>PrintMasteList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\report_dailyTransaction.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>report_dailyTransaction.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\report_delivery.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>report_delivery.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\report_itemsHistory.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>report_itemsHistory.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\report_MasterList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>report_MasterList.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\report_receive.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>report_receive.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\report_soa.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>report_soa.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\report_SOA1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>report_SOA1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\RPT_DAILYTRANS.resx">
+      <DependentUpon>RPT_DAILYTRANS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\RPT_ITMS.resx">
+      <DependentUpon>RPT_ITMS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\RPT_SOA.resx">
+      <DependentUpon>RPT_SOA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\SEARCH.resx">
+      <DependentUpon>SEARCH.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\SERVICES.resx">
+      <DependentUpon>SERVICES.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="SUDS LAUNDRY_1_TemporaryKey.pfx" />
+    <None Include="SUDS LAUNDRY_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sds2B.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sds3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-general-warning-sign-20.png" />
+    <None Include="Resources\warning.png" />
+    <None Include="Resources\important-20.png" />
+    <None Include="Resources\ok-20.png" />
+    <None Include="Resources\icons8-iphone-spinner.gif" />
+    <None Include="Resources\spinner.gif" />
+    <None Include="Resources\print.gif" />
+    <None Include="Resources\aBack.png" />
+    <None Include="Resources\aDown.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\aBack1.png" />
+    <None Include="Resources\aDown1.png" />
+    <Content Include="suds1 %281%29.ico" />
+    <Content Include="suds1 %282%29.ico" />
+    <Content Include="suds1 %283%29.ico" />
+    <Content Include="suds1 %284%29.ico" />
+    <Content Include="suds1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props'))" />
+  </Target>
+</Project>
